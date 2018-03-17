@@ -36,7 +36,7 @@ hbs.registerHelper('screamIt', (text) => {
 });
 
 app.get('/', (req,res) => {
-  res.render('help.hbs',{
+  res.render('home.hbs',{
     pageTitle : 'Blockchain',
     welcome : 'Welcome to my site',
     keywords : [
@@ -63,10 +63,19 @@ app.get('/about', (req,resp) => {
   //resp.send('inside about')
   resp.render('about.hbs', {
     pageTitle : 'About Page',
+    desc : 'Information about Blockchain'
   //  currentYear : new Date().getFullYear()
   })
 })
 
+app.get('/project', (req,resp) => {
+  //resp.send('inside about')
+  resp.render('project.hbs', {
+    pageTitle : 'Portfolio',
+    project : 'ethervault'
+  //  currentYear : new Date().getFullYear()
+  })
+})
 
 app.get('/bad', (req,res) =>{
   res.send({
